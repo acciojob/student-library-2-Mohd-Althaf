@@ -11,8 +11,8 @@ import java.util.List;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
+
 public class Book {
 
     @Id
@@ -71,6 +71,14 @@ public class Book {
         return author;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     public void setAuthor(Author author) {
         this.author = author;
     }
@@ -89,6 +97,15 @@ public class Book {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+    public Book(String name, Genre genre, Author author) {
+        this.name = name;
+        this.genre = genre;
+        this.author = author;
+        this.available = true;
+    }
+
+    public Book() {
     }
 }
 

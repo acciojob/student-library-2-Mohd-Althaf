@@ -13,8 +13,7 @@ import java.util.List;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Card {
 
     @Id
@@ -72,6 +71,9 @@ public class Card {
 
     public CardStatus getCardStatus() {
         return cardStatus;
+    }
+    public Card(){
+        this.cardStatus = CardStatus.ACTIVATED;
     }
 
     public void setCardStatus(CardStatus cardStatus) {
